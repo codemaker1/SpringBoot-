@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>welcome Page</title>
+</head>
+<body>
+<div>Hello</div>
+<p th:text="'welcome user : ' + ${user.firstName} +' Successfully Logged in !'"></p>
+
+<p>Select your choice </p>
+<!--  <a href="view-ticket" id="viewTicket">View your tickets</a>  -->
+<a th:href="@{/view/{email}(email=${user.emailAddress})}" id="viewTicket">View your tickets</a>
+<a th:href="@{/raise/ticket}" id="ticketRaise">Raise a new ticket</a>
+</body>
+</html>
